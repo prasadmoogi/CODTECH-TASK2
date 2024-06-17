@@ -1,0 +1,70 @@
+
+# Hello, I am Prasad
+#lets start with some x,y components to calculate operations
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Error! Division by zero."
+#modulus or percentage calculation
+def modulus(x, y):
+    if y != 0:
+        return x % y
+    else:
+        return "Error! Division by zero."
+# finding square root which i include this feature or it is called exponentation
+def exponentiate(x, y):
+    return x ** y
+
+def calculator():
+    print("Welcome to the SUPEROO Calculator!")
+    
+    while True:
+        try:
+            digit1 = float(input("Enter the first number: "))
+            digit2 = float(input("Enter the second number: "))
+        except ValueError:
+            print("Invalid input. Please enter numeric values.")
+            continue
+        
+        print("Select operation:")
+        print(" ADDITION (+)")
+        print(" SUBTRACTION (-)")
+        print(" MULTIPLICATION (x)")
+        print(" DIVISION (÷)")
+        print(" MODULUS (%)")
+        print(" EXPONENTIATION (^)")
+        choice = input("Enter choice (+/-/x/÷/%/^): ")
+      
+        if choice == '+':
+            print(f"The result is: {add(digit1, digit2)}")
+        elif choice == '-':
+            print(f"The result is: {subtract(digit1, digit2)}")
+        elif choice == 'x':
+            print(f"The result is: {multiply(digit1, digit2)}")
+        elif choice == '÷':
+            print(f"The result is: {divide(digit1, digit2)}")
+        elif choice == '%':
+            print(f"The result is: {modulus(digit1, digit2)}")
+        elif choice == '^':
+            print(f"The result is: {exponentiate(digit1, digit2)}")
+        else:
+            print("Invalid input. Please select a valid operation Dude.")
+        
+        next_calculation = input("Do you want to perform another calculation? (yes/no): ")
+        if next_calculation.lower() != 'yes':
+            break
+
+    print("Thank you for using the SUPEROO Calculator. Goodbye!")
+
+# Run the SUPEROO calculator program
+calculator()
